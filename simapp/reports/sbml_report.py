@@ -13,9 +13,7 @@ from django.shortcuts import Http404
 
 from simapp.models import CompModel
 
-# TODO: rate rules are not displayed correctly (they need dy/dt on the left side, compared to AssignmentRules)
-# TODO: hasOnlySubstanceUnits missing in species table
-
+# TODO: THIS IS DEPRECATED AND MUST BE REPLACED WITH NEW JINJA2 templates
 
 def report(request, model_pk):
     """
@@ -35,6 +33,9 @@ def report(request, model_pk):
     values = create_value_dictionary(model)
 
     # Render the template with the data
+    # TODO: do the template rendering on model creation and only load the model report afterwards
+
+
     template = loader.get_template('report/report.html')
     context = RequestContext(request, {
         'doc': doc,

@@ -53,6 +53,7 @@ unit_dict['kilogram'] = 'kg'
 unit_dict['meter'] = 'm'
 unit_dict['metre'] = 'm'
 unit_dict['second'] = 's'
+unit_dict['katal'] = 'kat'
 
 
 @register.filter
@@ -78,11 +79,14 @@ def SBML_unitDefinitionToString(udef):
         if s == 0 and e == 1:
             string = '{}{}'.format(m, k)
         elif (s == 0) and (m == ''):
-            string = '{}^{}'.format(k,e)
+            string = '{}^{}'.format(k, e)
         else:
             string = '({}10^{}*{})^{}'.format(m, s, k, e)
-        items.append(string)
-    return ' * '.join(items)
+        items.append('({})'.format(string))
+    full_string = ' * '.join(items)
+    print(libsbml.UnitDefinition_printUnits(udef))
+    print(" => ", full_string)
+    return full_string
 
 
 @register.filter
