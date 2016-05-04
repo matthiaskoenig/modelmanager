@@ -3,7 +3,7 @@ Testing the simapp database api.
 """
 
 from __future__ import print_function
-from simapp.db.api import *
+from api import *
 from django.test import TestCase
 from multiscale.examples.testdata import demo_sbml_no_annotations, demo_id
 

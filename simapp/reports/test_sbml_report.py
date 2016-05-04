@@ -5,7 +5,8 @@ Testing the SBML report.
 from __future__ import print_function
 import os
 from django.test import TestCase, Client
-from simapp.db.api import create_model, CompModelFormat
+from ..db.api import create_model, CompModelFormat
+
 
 from multiscale.examples.testdata import demo_sbml
 

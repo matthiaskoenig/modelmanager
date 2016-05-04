@@ -8,8 +8,8 @@ django.setup()
 
 from django.test import TestCase, Client
 from multiscale.examples.testdata import demo_sbml
-from simapp.db.api import *
-from simapp.reports.task_report import TaskReport
+from ..db.api import *
+from task_report import TaskReport
 
 class TaskReportTestCase(TestCase):
     def setUp(self):
