@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0dcec8c3-f938-4537-9998-c17248641bae" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simapp/reports/sbml_report.py" afterPath="$PROJECT_DIR$/simapp/reports/sbml_report.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simapp/templates/simapp/base_generic.html" afterPath="$PROJECT_DIR$/simapp/templates/simapp/base_generic.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simapp/templatetags/SBML_filters.py" afterPath="$PROJECT_DIR$/simapp/templatetags/SBML_filters.py" />
-    </list>
+    <list default="true" id="0dcec8c3-f938-4537-9998-c17248641bae" name="Default" comment="" />
     <ignored path="modelmanager.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
