@@ -1,0 +1,19 @@
+{% extends "simapp/base_generic.html" %}
+{% load macros %}
+{% loadmacros "simapp/macros.html" %}
+
+
+<!------------------------------------------------------->
+<!--  METHOD    									   -->
+<!------------------------------------------------------->
+{% block content %}
+    <h3>Method ({{ method.pk }})</h3>
+    <table id="table_items" class="table table-condensed table-responsive">
+        <thead>
+            {% usemacro method_header %}
+        </thead>
+        <tbody>
+            {% usemacro method_content %}
+        </tbody>
+    </table>
+{% endblock %}

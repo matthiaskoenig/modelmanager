@@ -1,0 +1,26 @@
+{% extends "simapp/base_generic.html" %}
+{% load macros %}
+{% loadmacros "simapp/macros.html" %}
+
+<!------------------------------------------------------->
+<!--  RESULTS										   -->
+<!------------------------------------------------------->
+{% block content %}
+    <table id="table_items" class="table table-condensed table-responsive">
+        <caption>Results</caption>
+        <thead>
+            {% usemacro result_header %}
+        </thead>
+        <tbody>
+            {% for result in result_list %}
+                {% usemacro result_content %}
+            {% endfor %}
+        </tbody>
+    </table>
+
+    {% if result_list %}
+        {% with items=result_list %}
+            {% usemacro pagination %}
+        {% endwith %}
+    {% endif %}
+{% endblock %}

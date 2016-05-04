@@ -1,0 +1,252 @@
+<!doctype html>{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="SBML report">
+    <meta name="author" content="Matthias Koenig">
+    <!--<meta http-equiv="refresh" content="5" />-->
+    <link rel="icon" href="{% static 'simapp/images/sbml.ico' %}">
+    <title>{{ model.getId }}</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'simapp/css/bootstrap.min.css' %}" >
+    <link rel="stylesheet" type="text/css" href="{% static 'simapp/css/dataTables.bootstrap.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'simapp/css/dashboard.css' %}"/>
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" type="text/css" href="{% static 'simapp/css/report.css' %}"/>
+
+
+    <!-- JAVASCRIPT -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+  <script type="text/javascript" language="javascript" src="{%  static 'simapp/js/jquery-1.11.1.min.js' %}"></script>
+      <script type="text/javascript" language="javascript" src="{%  static 'simapp/js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" language="javascript" src="{%  static 'simapp/js/jquery.dataTables.min.js' %}"></script>
+    <script type="text/javascript" language="javascript" src="{%  static 'simapp/js/dataTables.bootstrap.js' %}"></script>
+
+
+
+    <script type="text/javascript" charset="utf-8">
+        $(document).ready(function () {
+            $.extend( $.fn.dataTable.defaults, {
+                "searching": true,
+                "ordering": true
+            } );
+
+
+            var t_functions = $('#table_functions').dataTable({
+                "bPaginate": false,
+                "bInfo": false,
+                "dom": '<"top">rt<"bottom"><"clear">'
+            });
+            $('#searchField').keyup(function(){
+                t_functions.fnFilter($(this).val());
+            });
+
+            var t_units = $('#table_units').dataTable({
+                "bPaginate": false,
+                "bInfo": false,
+                "dom": '<"top">rt<"bottom"><"clear">'
+            });
+            $('#searchField').keyup(function(){
+                t_units.fnFilter($(this).val());
+            });
+
+            var t_compartments = $('#table_compartments').dataTable({
+               "bPaginate": false,
+                "bInfo": false,
+                "dom": '<"top">rt<"bottom"><"clear">'
+            });
+            $('#searchField').keyup(function(){
+                t_compartments.fnFilter($(this).val());
+            });
+
+            var t_species = $('#table_species').dataTable({
+               "bPaginate": false,
+                "bInfo": false,
+                "dom": '<"top">rt<"bottom"><"clear">'
+            });
+            $('#searchField').keyup(function(){
+                t_species.fnFilter($(this).val());
+            });
+
+            var t_parameters = $('#table_parameters').dataTable({
+               "bPaginate": false,
+                "bInfo": false,
+                "dom": '<"top">rt<"bottom"><"clear">'
+            });
+            $('#searchField').keyup(function(){
+                t_parameters.fnFilter($(this).val());
+            });
+
+            var t_assignments = $('#table_assignments').dataTable({
+               "bPaginate": false,
+                "bInfo": false,
+                "dom": '<"top">rt<"bottom"><"clear">'
+            });
+            $('#searchField').keyup(function(){
+                t_assignments.fnFilter($(this).val());
+            });
+
+            var t_rules = $('#table_rules').dataTable({
+               "bPaginate": false,
+                "bInfo": false,
+                "dom": '<"top">rt<"bottom"><"clear">'
+            });
+            $('#searchField').keyup(function(){
+                t_rules.fnFilter($(this).val());
+            });
+
+            var t_constraints = $('#table_constraints').dataTable({
+               "bPaginate": false,
+                "bInfo": false,
+                "dom": '<"top">rt<"bottom"><"clear">'
+            });
+            $('#searchField').keyup(function(){
+                t_constraints.fnFilter($(this).val());
+            });
+
+            var t_reactions = $('#table_reactions').dataTable({
+               "bPaginate": false,
+                "bInfo": false,
+                "dom": '<"top">rt<"bottom"><"clear">'
+            });
+            $('#searchField').keyup(function(){
+                t_reactions.fnFilter($(this).val());
+            });
+
+            var t_events = $('#table_events').dataTable({
+               "bPaginate": false,
+                "bInfo": false,
+                "dom": '<"top">rt<"bottom"><"clear">'
+            });
+            $('#searchField').keyup(function(){
+                t_events.fnFilter($(this).val());
+            });
+
+            $('#searchField').val('');
+            $('#searchField').focus();
+
+        });
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#top">{{ model.id }}</a>
+        </div>
+
+          <form class="navbar-form navbar-left">
+            <input id="searchField" type="text" class="form-control" placeholder="Search...">
+          </form>
+          <!--
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="{% url 'simapp:models' %}">Models</a></li>
+             <li><a href="{% url 'simapp:about' %}">About</a></li>
+              <li class="active"><a href="{% url 'admin:index' %}">Admin</a></li>
+          </ul>
+        </div>
+        -->
+      </div>
+    </nav>
+
+
+<div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+          <li><a href="#top">Model</a></li>
+             {% if units %}
+                    <li><a href="#UnitDefinitions">UnitDefinitions</a></li>{% endif %}
+                {% if functions %}
+                    <li><a href="#FunctionDefinitions">FunctionDefinitions</a></li>{% endif %}
+                {% if unitDefinitions %}
+                    <li><a href="#UnitDefinitions">UnitDefinitions</a></li>{% endif %}
+                {% if compartments %}
+                    <li><a href="#Compartments">Compartments</a></li>{% endif %}
+                {% if species %}
+                    <li><a href="#Species">Species</a></li>{% endif %}
+                {% if parameters %}
+                    <li><a href="#Parameters">Parameters</a></li>{% endif %}
+                {% if assignments %}
+                    <li><a href="#InitialAssignments">InitialAssignments</a></li>{% endif %}
+                {% if rules %}
+                    <li><a href="#Rules">Rules</a></li>{% endif %}
+                {% if constraints %}
+                    <li><a href="#Constraints">Constraints</a></li>{% endif %}
+                {% if reactions %}
+                    <li><a href="#Reactions">Reactions</a></li>{% endif %}
+                {% if events %}
+                    <li><a href="#Events">Events</a></li>{% endif %}
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+    <!-- CONTENT -->
+    <div class="content">
+        <!-- <input type="text" id="searchField"> -->
+        {% block content %}
+            <span id="Model"></span>
+            <span id="UnitDefinitions"></span>
+            <span id="FunctionDefinitions"></span>
+            <span id="Compartments"></span>
+            <span id="Species"></span>
+            <span id="Parameters"></span>
+            <span id="InitialAssignments"></span>
+            <span id="Rules"></span>
+            <span id="Constraints"></span>
+            <span id="Reactions"></span>
+            <span id="Events"></span>
+        {% endblock %}
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <hr/>
+        <p>&copy; 2015 Matthias Koenig.
+            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License"
+                                                                                        style="border-width:0"
+                                                                                        src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"/></a><br/>This
+            work by <a xmlns:cc="http://creativecommons.org/ns#" href="https://www.livermetabolism.com"
+                       property="cc:attributionName" rel="cc:attributionURL">Matthias Koenig</a> is licensed under a <a
+                    rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons
+                Attribution-ShareAlike 4.0 International License</a>.
+            <br/>
+            Powered by <a href="https://www.djangoproject.com" target="_blank"><img
+                    src="{% static 'simapp/images/django.png' %}" height="15" alt="django"/></a> and
+            bootstrap <a href="http://getbootstrap.com/" target="_blank"><img
+                    src="{% static 'simapp/images/bootstrap.png' %}" height="15" alt="bootstrap"/></a>.
+            Source available on <a href="https://github.com/matthiaskoenig/multiscale-galactose/" target="_blank"><img
+                    src="{% static 'simapp/images/github.png' %}" height="20" alt="GitHub"/></a>.
+        </p>
+    </div>
+
+        </div>
+
+</div>
+<!-- /container -->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+</body>
+</html>
+

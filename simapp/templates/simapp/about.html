@@ -1,0 +1,38 @@
+{% extends "simapp/base_generic.html" %}
+{% load staticfiles %}
+
+{% block content %}
+    <h1>About</h1>
+    <h2>Introduction</h2>
+    <p>This project contains the database content of the the multiscale-galactose project.</p>
+    <p>Methods and models are described in the upcoming publication "Multi-scale modelling of hepatic liver galactose
+        metabolism".
+        <br/>
+        If you have any questions, thoughts, concerns or feedback, please don't hesitate to email
+        <a href="mailto:konigmatt@googlemail.com">konigmatt[at]googlemail.com</a>.
+    </p>
+
+    <h2>Open Source</h2>
+    <p>This project is open source and shared under a Creative Commons License. All project code and data is available
+        from<br/>
+        <a href="https://github.com/matthiaskoenig/multiscale-galactose"><code>https://github.com/matthiaskoenig/multiscale-galactose</code></a>.
+    </p>
+    <p>
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License"
+                                                                                    style="border-width:0"
+                                                                                    src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"/></a><br/>This
+        work by <a xmlns:cc="http://creativecommons.org/ns#" href="https://www.livermetabolism.com"
+                   property="cc:attributionName" rel="cc:attributionURL">Matthias Koenig</a> is licensed under a <a
+            rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike
+        4.0 International License</a>.
+    </p>
+
+    <h2>Funding</h2>
+    <p>This work was funded 2011-2015 by the Virtual Liver Network VLN.</p>
+    <p>
+        <a href="http://www.virtual-liver.de" target="_blank"><img src="{% static 'simapp/images/vln.png' %}"
+                                                                   height="30" alt="Virtual Liver Network"/></a>
+        <a href="http://www.charite.de" target="_blank"><img src="{% static 'simapp/images/charite.png' %}" height="30"
+                                                             alt="Charite Berlin"/></a>
+    </p>
+{% endblock %}

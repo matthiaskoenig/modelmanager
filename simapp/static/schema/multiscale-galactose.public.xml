@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<database name="multiscale-galactose" schema="public" type="PostgreSQL - 9.3.7">
+   <tables>
+      <table name="simapp_compmodel" numRows="6" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('simapp_compmodel_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
+            <child column="model_id" foreignKey="simapp_task_model_id_79c0cc8a764233ed_fk_simapp_compmodel_id" implied="false" onDeleteCascade="false" table="simapp_task"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="model_id" nullable="false" remarks="" size="200" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="2" name="model_format" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="3" name="file" nullable="false" remarks="" size="200" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="4" name="md5" nullable="false" remarks="" size="36" type="varchar"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="simapp_compmodel_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="simapp_compmodel_model_id_201c1442e26577d3_like" unique="false">
+            <column ascending="true" name="model_id"/>
+         </index>
+         <index name="simapp_compmodel_model_id_key" unique="true">
+            <column ascending="true" name="model_id"/>
+         </index>
+      </table>
+      <table name="simapp_core" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('simapp_core_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
+            <child column="core_id" foreignKey="simapp_simulation_core_id_56302a93d53b995a_fk_simapp_core_id" implied="false" onDeleteCascade="false" table="simapp_simulation"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="ip" nullable="false" remarks="" size="200" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="2" name="cpu" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="6" id="3" name="time" nullable="false" remarks="" size="35" type="timestamptz"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="simapp_core_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="simapp_core_ip_2c0a059fb0d0bf1b_uniq" unique="true">
+            <column ascending="true" name="ip"/>
+            <column ascending="true" name="cpu"/>
+         </index>
+      </table>
+      <table name="simapp_method" numRows="1" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('simapp_method_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
+            <child column="method_id" foreignKey="simapp_method_se_method_id_619bd1ff3d291a6d_fk_simapp_method_id" implied="false" onDeleteCascade="false" table="simapp_method_settings"/>
+            <child column="method_id" foreignKey="simapp_task_method_id_5dc6915946e4b342_fk_simapp_method_id" implied="false" onDeleteCascade="false" table="simapp_task"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="method_type" nullable="false" remarks="" size="10" type="int4"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="simapp_method_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="simapp_method_settings" numRows="8" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('simapp_method_settings_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="method_id" nullable="false" remarks="" size="10" type="int4">
+            <parent column="id" foreignKey="simapp_method_se_method_id_619bd1ff3d291a6d_fk_simapp_method_id" implied="false" onDeleteCascade="false" table="simapp_method"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="2" name="setting_id" nullable="false" remarks="" size="10" type="int4">
+            <parent column="id" foreignKey="simapp_method__setting_id_54f8414f774153db_fk_simapp_setting_id" implied="false" onDeleteCascade="false" table="simapp_setting"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="simapp_method_settings_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="simapp_method_settings_60190d67" unique="false">
+            <column ascending="true" name="setting_id"/>
+         </index>
+         <index name="simapp_method_settings_836f12fb" unique="false">
+            <column ascending="true" name="method_id"/>
+         </index>
+         <index name="simapp_method_settings_method_id_setting_id_key" unique="true">
+            <column ascending="true" name="method_id"/>
+            <column ascending="true" name="setting_id"/>
+         </index>
+      </table>
+      <table name="simapp_parameter" numRows="28" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('simapp_parameter_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
+            <child column="parameter_id" foreignKey="simapp_sim_parameter_id_7858136de9795f93_fk_simapp_parameter_id" implied="false" onDeleteCascade="false" table="simapp_simulation_parameters"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="key" nullable="false" remarks="" size="50" type="varchar"/>
+         <column autoUpdated="false" digits="17" id="2" name="value" nullable="false" remarks="" size="17" type="float8"/>
+         <column autoUpdated="false" digits="0" id="3" name="unit" nullable="false" remarks="" size="50" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="4" name="parameter_type" nullable="false" remarks="" size="10" type="int4"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="simapp_parameter_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="simapp_parameter_key_71e6cdf3154908bc_uniq" unique="true">
+            <column ascending="true" name="key"/>
+            <column ascending="true" name="value"/>
+         </index>
+      </table>
+      <table name="simapp_result" numRows="652" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('simapp_result_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="result_type" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="2" name="file" nullable="false" remarks="" size="200" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="3" name="simulation_id" nullable="false" remarks="" size="10" type="int4">
+            <parent column="id" foreignKey="simapp_r_simulation_id_1320c16b2033bd82_fk_simapp_simulation_id" implied="false" onDeleteCascade="false" table="simapp_simulation"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="simapp_result_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="simapp_result_7725cb98" unique="false">
+            <column ascending="true" name="simulation_id"/>
+         </index>
+      </table>
+      <table name="simapp_setting" numRows="8" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('simapp_setting_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
+            <child column="setting_id" foreignKey="simapp_method__setting_id_54f8414f774153db_fk_simapp_setting_id" implied="false" onDeleteCascade="false" table="simapp_method_settings"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="key" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="2" name="value" nullable="false" remarks="" size="40" type="varchar"/>
+         <column autoUpdated="false" digits="0" id="3" name="datatype" nullable="false" remarks="" size="10" type="int4"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="simapp_setting_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="simapp_simulation" numRows="651" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('simapp_simulation_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
+            <child column="simulation_id" foreignKey="simapp_r_simulation_id_1320c16b2033bd82_fk_simapp_simulation_id" implied="false" onDeleteCascade="false" table="simapp_result"/>
+            <child column="simulation_id" foreignKey="simapp_s_simulation_id_784634abf21d7706_fk_simapp_simulation_id" implied="false" onDeleteCascade="false" table="simapp_simulation_parameters"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="status" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="6" id="2" name="time_create" nullable="false" remarks="" size="35" type="timestamptz"/>
+         <column autoUpdated="false" digits="6" id="3" name="time_assign" nullable="true" remarks="" size="35" type="timestamptz"/>
+         <column autoUpdated="false" digits="6" id="4" name="time_sim" nullable="true" remarks="" size="35" type="timestamptz"/>
+         <column autoUpdated="false" digits="0" id="5" name="core_id" nullable="true" remarks="" size="10" type="int4">
+            <parent column="id" foreignKey="simapp_simulation_core_id_56302a93d53b995a_fk_simapp_core_id" implied="false" onDeleteCascade="false" table="simapp_core"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="6" name="task_id" nullable="false" remarks="" size="10" type="int4">
+            <parent column="id" foreignKey="simapp_simulation_task_id_969a0e5493f2ce0_fk_simapp_task_id" implied="false" onDeleteCascade="false" table="simapp_task"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="simapp_simulation_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="simapp_simulation_57746cc8" unique="false">
+            <column ascending="true" name="task_id"/>
+         </index>
+         <index name="simapp_simulation_7603496a" unique="false">
+            <column ascending="true" name="core_id"/>
+         </index>
+      </table>
+      <table name="simapp_simulation_parameters" numRows="1276" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('simapp_simulation_parameters_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial"/>
+         <column autoUpdated="false" digits="0" id="1" name="simulation_id" nullable="false" remarks="" size="10" type="int4">
+            <parent column="id" foreignKey="simapp_s_simulation_id_784634abf21d7706_fk_simapp_simulation_id" implied="false" onDeleteCascade="false" table="simapp_simulation"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="2" name="parameter_id" nullable="false" remarks="" size="10" type="int4">
+            <parent column="id" foreignKey="simapp_sim_parameter_id_7858136de9795f93_fk_simapp_parameter_id" implied="false" onDeleteCascade="false" table="simapp_parameter"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="simapp_simulation_parameters_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="simapp_simulation_parameters_7725cb98" unique="false">
+            <column ascending="true" name="simulation_id"/>
+         </index>
+         <index name="simapp_simulation_parameters_80740216" unique="false">
+            <column ascending="true" name="parameter_id"/>
+         </index>
+         <index name="simapp_simulation_parameters_simulation_id_parameter_id_key" unique="true">
+            <column ascending="true" name="simulation_id"/>
+            <column ascending="true" name="parameter_id"/>
+         </index>
+      </table>
+      <table name="simapp_task" numRows="3" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('simapp_task_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="serial">
+            <child column="task_id" foreignKey="simapp_simulation_task_id_969a0e5493f2ce0_fk_simapp_task_id" implied="false" onDeleteCascade="false" table="simapp_simulation"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="priority" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="2" name="info" nullable="true" remarks="" size="2147483647" type="text"/>
+         <column autoUpdated="false" digits="0" id="3" name="status" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="4" name="method_id" nullable="false" remarks="" size="10" type="int4">
+            <parent column="id" foreignKey="simapp_task_method_id_5dc6915946e4b342_fk_simapp_method_id" implied="false" onDeleteCascade="false" table="simapp_method"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="5" name="model_id" nullable="false" remarks="" size="10" type="int4">
+            <parent column="id" foreignKey="simapp_task_model_id_79c0cc8a764233ed_fk_simapp_compmodel_id" implied="false" onDeleteCascade="false" table="simapp_compmodel"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="simapp_task_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="simapp_task_477cbf8a" unique="false">
+            <column ascending="true" name="model_id"/>
+         </index>
+         <index name="simapp_task_836f12fb" unique="false">
+            <column ascending="true" name="method_id"/>
+         </index>
+         <index name="simapp_task_model_id_47434fe965bf6229_uniq" unique="true">
+            <column ascending="true" name="model_id"/>
+            <column ascending="true" name="method_id"/>
+            <column ascending="true" name="info"/>
+         </index>
+      </table>
+   </tables>
+</database>

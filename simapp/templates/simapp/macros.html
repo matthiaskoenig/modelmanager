@@ -1,0 +1,228 @@
+{% load staticfiles %}
+{% load macros %}
+<!------------------------------------------------------->
+<!--  SIMULATION 									   -->
+<!------------------------------------------------------->
+{% macro simulation_header %}
+    <tr>
+        <th>pk</th>
+        <th>model</th>
+        <th>task</th>
+        <th>method</th>
+        <th>parameters</th>
+        <th>status</th>
+        <th>duration</th>
+        <th>core</th>
+        <th>results</th>
+    </tr>
+{% endmacro %}
+{% macro simulation_content %}
+    <tr class="{% if sim.is_done %}success{% else %}warning{% endif %}">
+        <td><a href="{% url 'simapp:simulation' sim.pk %}">{{ sim.pk }}</a></td>
+        <td><a href="{% url 'simapp:model' sim.task.model.pk %}">{{ sim.task.model.model_id }}</a></td>
+        <td><a href="{% url 'simapp:task' sim.task.pk %}">{{ sim.task }}</a></td>
+        <td><a href="{% url 'simapp:method' sim.task.method.pk %}">{{ sim.task.method }}</a></td>
+        <td>{% for p in sim.parameters.all %}{{ p }}<br/>{% endfor %}</td>
+        <td>{{ sim.status_str }}</td>
+        <td>{{ sim.duration }}</td>
+        <td>{{ sim.core }}</td>
+        <td> {% if sim.is_done %}
+            {%  for result in sim.results.all %}
+                <a href="{{ result.file.url }}" target="_blank">{{ result }}</a><br/>
+            {% endfor %}
+
+        {% endif %}
+        </td>
+    </tr>
+{% endmacro %}
+
+<!------------------------------------------------------->
+<!--  PARAMETER 									   -->
+<!------------------------------------------------------->
+{% macro parameter_header %}
+    <tr>
+        <th>id</th>
+        <th>value</th>
+        <th>unit</th>
+        <th>type</th>
+    </tr>
+{% endmacro %}
+{% macro parameter_content %}
+    <tr>
+        <td>{{ pars.key }}</td>
+        <td>{{ pars.value }}</td>
+        <td>{{ pars.unit }}</td>
+        <td>{{ pars.parameter_type_str }}</td>
+    </tr>
+{% endmacro %}
+
+<!------------------------------------------------------->
+<!--  MODEL											   -->
+<!------------------------------------------------------->
+{% macro model_header %}
+    <tr>
+        <th>pk</th>
+        <th>model</th>
+        <th>file</th>
+        <th>report</th>
+        <th>tasks</th>
+        <th>md5</th>
+    </tr>
+{% endmacro %}
+{% macro model_content %}
+    <tr>
+        <td><a href="{% url 'simapp:model' model.pk %}">{{ model.pk }}</a></td>
+        <td>{{ model }}</td>
+        <td><a href="{{ model.file.url }}" target="_blank">
+            {% if model.is_sbml %}
+                <img height="12" src="{% static 'simapp/images/sbml.png' %}">
+            {%  elif model.is_cellml %}
+                <img height="12" src="{% static 'simapp/images/cellml.png' %}">
+            {%  else %}
+                <img height="12" src="{% static 'simapp/images/unknown.png' %}">
+            {% endif %}
+        </a></td>
+        <td>{% if model.is_sbml %}
+            <a href="{% url 'simapp:report' model.pk %}" target="_blank">
+            <img height="12" src="{% static 'simapp/images/html5.png' %}"></a>
+            {% endif %}
+        </td>
+        <td>{% for task in model.tasks.all %}
+            <a href="{% url 'simapp:task' task.pk %}">{{ task }}</a>: {{ task.info }}<br/>
+            {% endfor %}
+            </td>
+        <td>{{ model.md5 }}</td>
+    </tr>
+{% endmacro %}
+
+<!------------------------------------------------------->
+<!--  RESULT    									   -->
+<!------------------------------------------------------->
+{% macro result_header %}
+    <tr>
+        <th>pk</th>
+        <th>sim</th>
+        <th>type</th>
+        <th>icon</th>
+        <th>file</th>
+    </tr>
+{% endmacro %}
+{% macro result_content %}
+    <tr>
+        <td>{{ result.pk }}</td>
+        <td><a href="{% url 'simapp:simulation' result.simulation.pk %}">{{ result.simulation }}</a></td>
+        <td>{{ result.result_type_str }}</td>
+        <td><a href="{{ result.file.url }}"><img src="{% static 'simapp/images/hdf5.png' %}" height="15"/></a></td>
+        <td><a href="{{ result.file.url }}">{{ result.file.name }}</a></td>
+    </tr>
+{% endmacro %}
+
+<!------------------------------------------------------->
+<!--  METHOD     									   -->
+<!------------------------------------------------------->
+{% macro method_header %}
+    <tr>
+        <th>pk</th>
+        <th>method_type</th>
+        <th>settings</th>
+    </tr>
+{% endmacro %}
+
+{% macro method_content %}
+    <tr>
+        <td>{{ method.pk }}</td>
+        <td>{{ method.method_type_str }}</td>
+        <td>{% for s in method.settings.all %}
+            {{ s.key_str }} = {{ s.value }}<br/>
+        {% endfor %}</td>
+    </tr>
+{% endmacro %}
+
+<!------------------------------------------------------->
+<!--  TASK 											   -->
+<!------------------------------------------------------->
+{% macro task_header %}
+    <tr>
+        <th>pk</th>
+        <th>model</th>
+        <th>status</th>
+        <th>simulations</th>
+        <th>priority</th>
+        <th>model</th>
+        <th>parameters</th>
+        <th>method</th>
+        <th>info</th>
+    </tr>
+{% endmacro %}
+{% macro task_content %}
+    <tr class="{% if task.is_done %}success{% else %}warning{% endif %}">
+        <td><a href="{% url 'simapp:task' task.pk %}">{{ task.pk }}</a></td>
+        <td>{{ task.model }} </td>
+        <td>{{ task.status_str }}</td>
+        <td>
+            <strong>{{ task.sim_count }}</strong>
+            [<span class="text-success">{{ task.done_count }}</span>|<span
+                class="ASSIGNED">{{ task.assigned_count }}</span>|<span
+                class="UNASSIGNED">{{ task.unassigned_count }}</span>|<span
+                class="text-danger">{{ task.error_count }}</span>]</td>
+        <td>{{ task.priority }}</td>
+        <td>{{ task.sbml_model.model_id }}
+            <a href="{{ task.sbml_model.file.url }}" target="_blank"><img height="12" src="{% static 'simapp/images/sbml.png' %}"></a>
+            <a href="{% url 'simapp:report' task.model.pk %}" target="_blank"><img height="12" src="{% static 'simapp/images/html5.png' %}"></a>
+            </td>
+        <td><a href="{% url 'simapp:task_parameters' task.pk %}" target="_blank">
+            <img height="12" src="{% static 'simapp/images/params_small.png' %}"></a></td>
+        <td><strong>{{ task.method }}({{ task.method.method_type_str }})</strong><br/>
+            {% for s in task.method.settings.all %}
+                {{ s.key_str }} = {{ s.value }}<br/>
+            {% endfor %}</td>
+        <td width="400px">{{ task.info }}</td>
+    </tr>
+{% endmacro %}
+
+<!------------------------------------------------------->
+<!--  CORE      									   -->
+<!------------------------------------------------------->
+{% macro core_header %}
+    <tr>
+        <th>id</th>
+        <th>computer</th>
+        <th>ip</th>
+        <th>cpu</th>
+        <th>time</th>
+        <th>is active</th>
+    </tr>
+{% endmacro %}
+{% macro core_content %}
+    <tr class="{% if core.active %}success{% else %}warning{% endif %}">
+        <td>{{ core.id }}</td>
+        <td>{{ core.computer }}</td>
+        <td>{{ core.ip }}</td>
+        <td>{{ core.cpu }}</td>
+        <td>{{ core.time }}</td>
+        <td>{{ core.active }}</td>
+    </tr>
+{% endmacro %}
+
+<!------------------------------------------------------->
+<!--  PAGINATION  									   -->
+<!------------------------------------------------------->
+{% macro pagination %}
+  <div class="pagination">
+    <span class="step-links">
+        {% if items.has_previous %}
+            <a href="?page={{ items.previous_page_number }}">previous</a>
+        {% else %}
+         previous
+        {% endif %}
+		 | 
+        {% if items.has_next %}
+            <a href="?page={{ items.next_page_number }}">next</a>
+        {% endif %}
+        
+        <span class="current">
+           [{{ items.number }} of {{ items.paginator.num_pages }}]
+        </span>
+    </span>
+	</div>
+{% endmacro %}

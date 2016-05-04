@@ -1,0 +1,31 @@
+{% extends "simapp/base_generic.html" %}
+{% load macros %}
+{% loadmacros "simapp/macros.html" %}
+
+<!------------------------------------------------------->
+<!--  TASK  										   -->
+<!------------------------------------------------------->
+{% block content %}
+    <h1>Task ({{ task.pk }})</h1>
+    <table class="table table-condensed table-responsive">
+    <thead>
+        {% usemacro task_header %}
+    </thead>
+        <tbody>
+            {% usemacro task_content %}
+        </tbody>
+    </table>
+
+    <!-- Simulations for task -->
+    <table id="table_items" class="table table-condensed table-responsive">
+    <thead>
+        {% usemacro simulation_header %}
+    </thead>
+    <tbody>
+        {% for sim in simulations %}
+        {%  comment %}{% for sim in task.simulations.all %}{% endcomment %}
+            {% usemacro simulation_content %}
+        {% endfor %}
+    </tbody>
+    </table>
+{% endblock %}

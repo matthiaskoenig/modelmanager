@@ -1,0 +1,61 @@
+{% extends "simapp/base_generic.html" %}
+{% load macros %}
+{% loadmacros "simapp/macros.html" %}
+
+<!------------------------------------------------------->
+<!--  SIMULATION									   -->
+<!------------------------------------------------------->
+{% block content %}
+    <h3>Simulation ({{ sim.pk }})</h3>
+    <table class="table table-condensed table-responsive">
+        <thead>
+            {% usemacro simulation_header %}
+        </thead>
+        <tbody>
+            {% usemacro simulation_content %}
+        </tbody>
+    </table>
+
+    <h3>Model</h3>
+    {% with model=sim.task.model %}
+        <table id="table" class="table table-condensed table-responsive">
+            <thead>
+                {% usemacro model_header %}
+            </thead>
+            <tbody>
+                {% usemacro model_content %}
+            </tbody>
+        </table>
+    {% endwith %}
+
+    <h3>Parameters</h3>
+    <table class="table table-condensed table-responsive">
+        <thead>
+            {% usemacro parameter_header %}
+        </thead>
+        <tbody>
+            {% for pars in sim.parameters.all %}
+                {% usemacro parameter_content %}
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h3>Result</h3>
+    {% if sim.is_done %}
+            <table class="table table-condensed table-responsive">
+                <thead>
+                    {% usemacro result_header %}
+                </thead>
+                <tbody>
+                {% for result in sim.results.all %}
+                    {% usemacro result_content %}
+                {%  endfor %}
+                </tbody>
+            </table>
+    {% else %}
+        <p>
+            No results available for simulation status <strong>{{ sim.status_str }}</strong>.
+        </p>
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "simapp/base_generic.html" %}
+{% load macros %}
+{% loadmacros "simapp/macros.html" %}
+
+<!------------------------------------------------------->
+<!--  TASKS 										   -->
+<!------------------------------------------------------->
+{% block content %}
+    <h3>Tasks</h3>
+    <table id="table_items" class="table table-condensed table-responsive">
+        <thead>
+            {% usemacro task_header %}
+        </thead>
+        <tbody>
+        {% for task in task_list %}
+            {% usemacro task_content %}
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

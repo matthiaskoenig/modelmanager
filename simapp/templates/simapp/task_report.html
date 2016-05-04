@@ -1,0 +1,38 @@
+{% extends "simapp/base_generic.html" %}
+{% load macros %}
+{% loadmacros "simapp/macros.html" %}
+{% load staticfiles %}
+{% load Parameter_filters %}
+<!------------------------------------------------------->
+<!--  TASK  										   -->
+<!------------------------------------------------------->
+{% block content %}
+    {% comment %}
+    <h1>Task ({{ task.pk }})</h1>
+    <table class="table table-condensed table-responsive">
+    <thead>
+        {% usemacro task_header %}
+    </thead>
+        <tbody>
+            {% usemacro task_content %}
+        </tbody>
+    </table>
+
+    <!-- Simulations for task -->
+    <table id="table_items" class="table table-condensed table-responsive">
+    <thead>
+        {% usemacro simulation_header %}
+    </thead>
+    <tbody>
+        {% for sim in task.simulations.all|slice:":50" %}
+            {% usemacro simulation_content %}
+        {% endfor %}
+    </tbody>
+    </table>
+
+    {% endcomment %}
+    <a href="{% url 'simapp:task_report_csv' task.pk %}"><img src="{% static 'simapp/images/csv.png' %}" height="25"/></a>
+    {{ df | dataframe_to_html | safe }}
+
+
+{% endblock %}

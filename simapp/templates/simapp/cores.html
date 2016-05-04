@@ -1,0 +1,21 @@
+{% extends "simapp/base_generic.html" %}
+{% load staticfiles %}
+{% load macros %}
+{% loadmacros "simapp/macros.html" %}
+
+<!------------------------------------------------------->
+<!--  CORES											   -->
+<!------------------------------------------------------->
+{% block content %}
+    <h3>Cores</h3>
+    <table id="table_items" class="table table-condensed table-responsive">
+        <thead>
+            {% usemacro core_header %}
+        </thead>
+        <tbody>
+            {% for core in core_list %}
+                {% usemacro core_content %}
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

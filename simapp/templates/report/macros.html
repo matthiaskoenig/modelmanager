@@ -1,0 +1,284 @@
+{% load staticfiles %}
+{% load SBML_filters %}
+{% load Lookup_filters %}
+{% load macros %}
+
+
+{% macro id %}<td class="active">{{ item.id }}</td>{% endmacro %}
+
+{% macro sbo_term %}
+    {% if item.getSBOTerm != -1 %}<a href="{{item.getSBOTermAsURL}}" target="_blank">{{item.getSBOTermID}}</a>{% else %}-{% endif %}
+{% endmacro %}
+
+{% macro annotation %}{% if item.isSetAnnotation %}
+{%autoescape off%}{{item|SBML_annotationToString}}{% endautoescape %}
+{% else %}-{% endif %}{% endmacro %}
+
+{% macro math %}{{item.getMath|SBML_astnodeToString}}{% endmacro %}
+
+{% macro annotation_xml %}{% if item.isSetAnnotation %}<pre>{{item.getAnnotationString}}</pre>{% endif %}{% endmacro %}
+
+{% macro notes %}{% if item.isSetNotes %}{%autoescape off%}{{item.getNotesString}}{% endautoescape %}{% endif %}{% endmacro %}
+
+
+<!------------------------------------------------------->
+<!--  MODEL 									       -->
+<!------------------------------------------------------->
+{% macro model %}
+	{% with model as item %}
+	<tr><td class="active">id</td><td>{{ item.id }}</td></tr>
+	<tr><td class="active">name</td><td>{{ item.name}}</td></tr>
+	<tr><td class="active">version</td><td>L{{item.getLevel}}V{{model.getVersion}}</td></tr>
+	<tr><td class="active">time</td><td>{{item.getTimeUnits}}</td></tr>
+	<tr><td class="active">substance</td><td>{{item.getSubstanceUnits}}</td></tr>
+	<tr><td class="active">extent</td><td>{{item.getExtentUnits}}</td></tr>
+	<tr><td class="active">volume</td><td>{{item.getVolumeUnits}}</td></tr>
+	<tr><td class="active">area</td><td>{{item.getAreaUnits}}</td></tr>
+	<tr><td class="active">length</td><td>{{item.getLengthUnits}}</td></tr>
+	{% endwith %}
+{% endmacro %}
+
+<!------------------------------------------------------->
+<!--  FUNCTION DEFINITIONS   						   -->
+<!------------------------------------------------------->
+{% macro function_header %}
+    <th scope="col" class="hidden">type</th>
+	<th scope="col" class="warning">FunctionDefinitions [{{ functions_size }}]</th>
+	<th scope="col">name</th>
+	<th scope="col">math</th>
+	<th scope="col">sbo</th>
+	<th scope="col">cvterm</th>
+{% endmacro %}
+{% macro function_content %}
+    <td class="hidden">FunctionDefinition</td>
+	{% usemacro id %}
+	<td>{{ item.name }}</td>
+	<td>{{item.getMath|SBML_astnodeToString}}</td>
+	<td>{% usemacro sbo_term %}</td>
+	<td>{% usemacro annotation %}</td>
+{% endmacro %}
+<!------------------------------------------------------->
+<!--  UNIT DEFINITIONS       						   -->
+<!------------------------------------------------------->
+{% macro unit_header %}
+    <th scope="col" class="hidden">type</th>
+	<th scope="col" class="warning">UnitDefinitions [{{ units_size }}]</th>
+	<th scope="col">name</th>
+	<th scope="col">units</th>
+	<th scope="col">sbo</th>
+	<th scope="col">cvterm</th>
+{% endmacro %}
+{% macro unit_content %}
+    <td class="hidden">UnitDefinition</td>
+	{% usemacro id %}
+	<td>{{ item.name }}</td>
+	<td>{{item|SBML_unitDefinitionToString}}</td>
+	<td>{% usemacro sbo_term %}</td>
+	<td>{% usemacro annotation %}</td>
+{% endmacro %}
+<!------------------------------------------------------->
+<!--  COMPARTMENTS          						   -->
+<!------------------------------------------------------->
+{% macro compartment_header %}
+    <th scope="col" class="hidden">type</th>
+	<th scope="col" class="warning">Compartments [{{ compartments_size }}]</th>
+	<th scope="col">name</th>
+	<th scope="col">size</th>
+	<th scope="col">constant</th>
+	<th scope="col">spatial dimensions</th>
+	<th scope="col">unit</th>
+	<th scope="col">derived unit</th>
+	<th scope="col">sbo</th>
+	<th scope="col">cvterm</th>
+{% endmacro %}
+{% macro compartment_content %}
+    <td class="hidden">Compartment</td>
+	{% usemacro id %}
+	<td>{{ item.name }}</td>
+	<td>{% if item.isSetSize %}{{ item.size }}{% else %}
+	                              {{values|get_item:item.id}}{% endif %}</td>
+	<td class="{% if item.getConstant %}success{% else %}danger{% endif %}">{{item.getConstant}}</td>
+	<td>{{item.getSpatialDimensions}}</td>
+	<td>{{item.getUnits}}</td>
+	<td>{{ item.getDerivedUnitDefinition|SBML_unitDefinitionToString }}</td>
+	<td>{% usemacro sbo_term %}</td>
+	<td>{% usemacro annotation %}</td>
+{% endmacro %}
+<!------------------------------------------------------->
+<!--  SPECIES                						   -->
+<!------------------------------------------------------->
+{% macro species_header %}
+    <th scope="col" class="hidden">type</th>
+	<th scope="col" class="warning">Species [{{ species_size }}]</th>
+	<th scope="col">name</th>
+	<th scope="col">compartment</th>
+	<th scope="col">boundary condition</th>
+	<th scope="col">constant</th>
+	<th scope="col">initial amount</th>
+	<th scope="col">initial concentration</th>
+	<th scope="col">substance units</th>
+	<th scope="col">derived units</th>
+	<th scope="col">sbo</th>
+	<th scope="col">cvterm</th>
+{% endmacro %}
+{% macro species_content %}
+    <td class="hidden">Species</td>
+	{% usemacro id %}
+	<td>{{ item.name }}</td>
+	<td>{{item.getCompartment}}</td>
+	<td class="{% if item.getBoundaryCondition %} success {% else %}  danger  {% endif %}">{{item.getBoundaryCondition}}</td>
+	<td class="{% if item.getConstant %} success  {% else %}  danger  {% endif %}">{{ item.getConstant }}</td>	
+	<td>{% if item.isSetInitialAmount %} {{item.getInitialAmount}} {% endif %}</td>
+	<td>{% if item.isSetInitialConcentration %} {{item.getInitialConcentration}} {% endif %} </td>
+	<td>{{ item.getSubstanceUnits }}</td>
+	<td>{{ item.getDerivedUnitDefinition|SBML_unitDefinitionToString }}</td>
+	<td>{% usemacro sbo_term %}</td>
+	<td>{% usemacro annotation %}</td>
+{% endmacro %}
+<!------------------------------------------------------->
+<!--  PARAMETERS             						   -->
+<!------------------------------------------------------->
+{% macro parameter_header %}
+    <th scope="col" class="hidden">type</th>
+	<th scope="col" class="warning">Parameters [{{ parameters_size }}]</th>
+	<th scope="col">name</th>
+	<th scope="col">value</th>
+	<th scope="col">unit</th>
+	<th scope="col">derived unit</th>
+	<th scope="col">constant</th>
+	<th scope="col">sbo</th>
+	<th scope="col">cvterm</th>
+{% endmacro %}
+{% macro parameter_content %}
+    <td class="hidden">Parameter</td>
+	{% usemacro id %}
+	<td>{{ item.name }}</td>
+	<td>{% if item.isSetValue %}{{item.getValue}}{% else %}
+								   {{values|get_item:item.getId}}{% endif %}</td>
+	
+	<td>{{item.getUnits}}</td>
+	<td>{{ item.getDerivedUnitDefinition|SBML_unitDefinitionToString }}</td>
+	<td class="{% if item.getConstant %} success {% else %} danger {% endif %}">{{item.getConstant}}</td>
+	<td>{% usemacro sbo_term %}</td>
+	<td>{% usemacro annotation %}</td>
+{% endmacro %}
+<!------------------------------------------------------->
+<!--  INITIAL ASSIGNMENTS   						   -->
+<!------------------------------------------------------->
+{% macro assignment_header %}
+    <th scope="col" class="hidden">type</th>
+	<th scope="col" class="warning">InitialAssignments [{{ assignments_size }}]</th>
+	<th scope="col">&nbsp;</th>
+	<th scope="col">assignment</th>
+	<th scope="col">derived units</th>
+	<th scope="col">sbo</th>
+	<th scope="col">cvterm</th>
+{% endmacro %}
+{% macro assignment_content %}
+    <td class="hidden">InitialAssignment</td>
+	{% usemacro id %}
+	<td>=</td>
+	<td>{% usemacro math %}</td>
+	<td>{{ item.getDerivedUnitDefinition|SBML_unitDefinitionToString }}</td>
+	<td>{% usemacro sbo_term %}</td>
+	<td>{% usemacro annotation %}</td>
+{% endmacro %}
+<!------------------------------------------------------->
+<!--  RULES  				   						   -->
+<!------------------------------------------------------->
+{% macro rule_header %}
+    <th scope="col" class="hidden">type</th>
+	<th scope="col" class="warning">Rules [{{ rules_size }}]</th>
+	<th scope="col">&nbsp;</th>
+	<th scope="col">assignment</th>
+	<th scope="col">derived units</th>
+	<th scope="col">sbo</th>
+	<th scope="col">cvterm</th>
+{% endmacro %}
+{% macro rule_content %}
+    <td class="hidden">Rule</td>
+	{% usemacro id %}
+	<td>=</td>
+	<td>{% usemacro math %}</td>
+	<td>{{ item.getDerivedUnitDefinition|SBML_unitDefinitionToString }}</td>
+	<td>{% usemacro sbo_term %}</td>
+	<td>{% usemacro annotation %}</td>
+{% endmacro %}
+<!------------------------------------------------------->
+<!--  CONSTRAINTS			   						   -->
+<!------------------------------------------------------->
+{% macro constraint_header %}
+    <th scope="col" class="hidden">type</th>
+	<th scope="col" class="warning">Constraints [{{ constraints_size }}]</th>
+	<th scope="col">constraint</th>
+	<th scope="col">sbo</th>
+	<th scope="col">cvterm</th>
+{% endmacro %}
+{% macro constraint_content %}
+    <td class="hidden">Constraint</td>
+		{% usemacro id %}
+	<td>{% usemacro math %}</td>
+	<td>{% usemacro sbo_term %}</td>
+	<td>{% usemacro annotation %}</td>
+{% endmacro %}
+<!------------------------------------------------------->
+<!--  REACTIONS 			   						   -->
+<!------------------------------------------------------->
+{% macro reaction_header %}
+    <th scope="col" class="hidden">type</th>
+	<th scope="col" class="warning">Reactions [{{ reactions_size }}]</th>
+	<th scope="col">name</th>
+	<th scope="col">reversibility</th>
+	<th scope="col">equation</th>
+	<th scope="col">modifiers</th>
+	<th scope="col">derived units</th>
+	<th scope="col">formula</th>
+	<th scope="col">sbo</th>
+	<th scope="col">cvterm</th>
+{% endmacro %}
+{% macro reaction_content %}
+    <td class="hidden">Reaction</td>
+	{% usemacro id %}
+	<td>{{ item.name }}</td>
+	{% if item.getReversible %}<td class="success">&lt;=&gt;</td>{% else %}
+	<td class="danger">&nbsp;=&gt;</td>{% endif %}
+	<td>{{item | SBML_reactionToString}}</td>
+	<td>{% for mod in item.getListOfModifiers %}
+						{{mod.getSpecies}}<br />
+		 {% endfor %}</td>
+	<td>{{item.getKineticLaw.getDerivedUnitDefinition|SBML_unitDefinitionToString}}</td>
+	<td>{{item.getKineticLaw.getMath|SBML_astnodeToString}}</td>
+	<td>{% usemacro sbo_term %}</td>
+	<td>{% usemacro annotation %}</td>
+{% endmacro %}
+<!------------------------------------------------------->
+<!--  EVENTS     			   						   -->
+<!------------------------------------------------------->
+{% macro event_header %}
+    <th scope="col" class="hidden">type</th>
+	<th scope="col" class="warning">Events [{{ events_size }}]</th>
+	<th scope="col">name</th>
+	<th scope="col">trigger</th>
+	<th scope="col">priority</th>
+	<th scope="col">delay</th>
+	<th scope="col">assignments</th>
+	<th scope="col">sbo</th>
+	<th scope="col">cvterm</th>
+{% endmacro %}
+{% macro event_content %}
+    <td class="hidden">Event</td>
+	{% usemacro id %}
+	<td>{{ item.name }}</td>
+	<td>
+	{{item.getTrigger.getMath|SBML_astnodeToString}}<br />
+	initialValue = {{item.getTrigger.getInitialValue}}<br />
+	persistent = {{item.getTrigger.getPersistent}}<br />
+	</td>
+	<td>{{item.getPriority}}</td>
+	<td>{{item.getDelay}}</td>
+	<td>{% for eva in item.getListOfEventAssignments %}
+    		{{eva.getId}} = {{eva.getMath|SBML_astnodeToString}}<br />
+    	{% endfor %}</td>
+	<td>{% usemacro sbo_term %}</td>
+	<td>{% usemacro annotation %}</td>
+{% endmacro %}

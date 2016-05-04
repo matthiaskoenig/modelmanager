@@ -1,0 +1,33 @@
+{% extends "simapp/base_generic.html" %}
+{% load staticfiles %}
+{% load macros %}
+{% loadmacros "simapp/macros.html" %}
+
+<!------------------------------------------------------->
+<!--  MODELS										   -->
+<!------------------------------------------------------->
+{% block content %}
+    <h3>Model ({{ model.pk }})</h3>
+    <table class="table table-condensed table-responsive">
+        <thead>
+            {% usemacro model_header %}
+        </thead>
+        <tbody>
+            {% usemacro model_content %}
+        </tbody>
+    </table>
+
+    <h3>Tasks</h3>
+    <table id="table_items" class="table table-condensed table-responsive">
+        <thead>
+            {% usemacro task_header %}
+        </thead>
+        <tbody>
+        {% for task in model.tasks.all %}
+            {% usemacro task_content %}
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
+

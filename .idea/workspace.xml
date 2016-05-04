@@ -1,0 +1,684 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0dcec8c3-f938-4537-9998-c17248641bae" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/auth_group.1degree.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/auth_group.2degrees.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/auth_group_permissions.1degree.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/auth_group_permissions.2degrees.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/auth_permission.1degree.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/auth_permission.2degrees.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/auth_user.1degree.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/auth_user.2degrees.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/auth_user_groups.1degree.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/auth_user_groups.2degrees.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/auth_user_user_permissions.1degree.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/auth_user_user_permissions.2degrees.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/django_admin_log.1degree.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/django_admin_log.2degrees.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/django_content_type.1degree.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/django_content_type.2degrees.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/sbmlsim_core.1degree.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/sbmlsim_core.2degrees.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/sbmlsim_integration.1degree.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/sbmlsim_integration.2degrees.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/sbmlsim_integration_settings.1degree.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/sbmlsim_integration_settings.2degrees.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/sbmlsim_parameter.1degree.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/sbmlsim_parameter.2degrees.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/sbmlsim_sbmlmodel.1degree.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/sbmlsim_sbmlmodel.2degrees.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/sbmlsim_setting.1degree.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/sbmlsim_setting.2degrees.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/sbmlsim_simulation.1degree.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/sbmlsim_simulation.2degrees.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/sbmlsim_simulation_parameters.1degree.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/sbmlsim_simulation_parameters.2degrees.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/sbmlsim_task.1degree.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/sbmlsim_task.2degrees.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/sbmlsim_timecourse.1degree.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/sbmlsim_timecourse.2degrees.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/simapp_compmodel.1degree.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/simapp_compmodel.2degrees.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/simapp_core.1degree.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/simapp_core.2degrees.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/simapp_method.1degree.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/simapp_method.2degrees.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/simapp_method_settings.1degree.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/simapp_method_settings.2degrees.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/simapp_parameter.1degree.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/simapp_parameter.2degrees.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/simapp_result.1degree.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/simapp_result.2degrees.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/simapp_setting.1degree.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/simapp_setting.2degrees.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/simapp_simulation.1degree.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/simapp_simulation.2degrees.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/simapp_simulation_parameters.1degree.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/simapp_simulation_parameters.2degrees.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/simapp_task.1degree.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/simapp_task.2degrees.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/summary/django_migrations.1degree.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/summary/django_session.1degree.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/summary/relationships.real.compact.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/diagrams/summary/relationships.real.large.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/images/background.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/images/tabLeft.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/images/tabRight.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/simapp/fonts/glyphicons-halflings-regular.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/simapp/fonts/glyphicons-halflings-regular.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/simapp/fonts/glyphicons-halflings-regular.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/simapp/fonts/glyphicons-halflings-regular.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/simapp/images/apple-touch-icon-114x114.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/simapp/images/apple-touch-icon-72x72.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/simapp/images/apple-touch-icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/simapp/images/bootstrap.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/simapp/images/cellml.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/simapp/images/charite.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/simapp/images/csv.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/simapp/images/django.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/simapp/images/favicon.ico" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/simapp/images/github.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/simapp/images/hdf5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/simapp/images/html5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/simapp/images/multiscale.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/simapp/images/params-128.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/simapp/images/params_small.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/simapp/images/sbml.ico" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/simapp/images/sbml.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/simapp/images/sbml_logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/simapp/images/seek.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/simapp/images/unknown.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/simapp/images/vln.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/macros/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/macros/models.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/macros/templatetags/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/macros/templatetags/macros.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/manage.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modelmanager/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modelmanager/settings.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modelmanager/urls.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modelmanager/wsgi.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/requirements.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/admin.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/analysis/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/analysis/cyfluxviz/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/analysis/cyfluxviz/fluxdata2XML.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/analysis/cyfluxviz/timecourseCSV2cyfluxvizXML.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/analysis/mpi/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/analysis/mpi/mpi_example.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/analysis/plots.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/analysis/prepare_task.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/analysis/prepare_task_batch.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/db/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/db/api.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/db/manager.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/db/test_api.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/migrations/0001_initial.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/migrations/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/models.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/reports/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/reports/sbml_report.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/reports/task_report.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/reports/test_sbml_report.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/reports/test_task_report.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/anomalies.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/columns.byAuto.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/columns.byColumn.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/columns.byDefault.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/columns.byNulls.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/columns.bySize.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/columns.byTable.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/columns.byType.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/constraints.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/deletionOrder.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/insertionOrder.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/jquery.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/multiscale-galactose.public.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/relationships.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/schemaSpy.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/schemaSpy.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/tables/auth_group.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/tables/auth_group_permissions.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/tables/auth_permission.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/tables/auth_user.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/tables/auth_user_groups.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/tables/auth_user_user_permissions.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/tables/django_admin_log.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/tables/django_content_type.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/tables/django_migrations.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/tables/django_session.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/tables/sbmlsim_core.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/tables/sbmlsim_integration.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/tables/sbmlsim_integration_settings.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/tables/sbmlsim_parameter.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/tables/sbmlsim_sbmlmodel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/tables/sbmlsim_setting.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/tables/sbmlsim_simulation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/tables/sbmlsim_simulation_parameters.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/tables/sbmlsim_task.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/tables/sbmlsim_timecourse.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/tables/simapp_compmodel.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/tables/simapp_core.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/tables/simapp_method.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/tables/simapp_method_settings.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/tables/simapp_parameter.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/tables/simapp_result.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/tables/simapp_setting.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/tables/simapp_simulation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/tables/simapp_simulation_parameters.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/tables/simapp_task.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/schema/utilities.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/simapp/css/bootstrap-theme.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/simapp/css/bootstrap-theme.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/simapp/css/bootstrap-theme.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/simapp/css/bootstrap.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/simapp/css/bootstrap.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/simapp/css/bootstrap.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/simapp/css/dashboard.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/simapp/css/dataTables.bootstrap.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/simapp/css/my.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/simapp/css/mysite.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/simapp/css/report.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/simapp/fonts/glyphicons-halflings-regular.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/simapp/js/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/simapp/js/bootstrap.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/simapp/js/bootstrap.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/simapp/js/dataTables.bootstrap.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/simapp/js/jquery-1.10.2.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/simapp/js/jquery-1.11.1.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/simapp/js/jquery.dataTables.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/simapp/js/jquery.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/simapp/js/jquery.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/static/simapp/js/npm.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/storage.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/templates/405.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/templates/report/macros.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/templates/report/report.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/templates/report/report_generic.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/templates/simapp/about.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/templates/simapp/base_generic.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/templates/simapp/cores.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/templates/simapp/macros.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/templates/simapp/method.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/templates/simapp/methods.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/templates/simapp/model.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/templates/simapp/models.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/templates/simapp/results.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/templates/simapp/simulation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/templates/simapp/simulations.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/templates/simapp/task.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/templates/simapp/task_report.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/templates/simapp/tasks.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/templatetags/Lookup_filters.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/templatetags/Parameter_filters.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/templatetags/SBML_filters.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/templatetags/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/tests.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/urls.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simapp/views.py" />
+    </list>
+    <ignored path="modelmanager.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/modelmanager$manage.coverage" NAME="manage Coverage Results" MODIFIED="1462344780968" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="modelmanager" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="requirements.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/requirements.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/modelmanager/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="73">
+              <caret line="84" column="10" selection-start-line="84" selection-start-column="10" selection-end-line="84" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/requirements.txt" />
+        <option value="$PROJECT_DIR$/modelmanager/settings.py" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="443" />
+    <option name="y" value="100" />
+    <option name="width" value="1441" />
+    <option name="height" value="966" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modelmanager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modelmanager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modelmanager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modelmanager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modelmanager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modelmanager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.django.DjangoModulesConfigurable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/modelmanager/settings.py" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Django server.modelmanager">
+    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="modelmanager" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="modelmanager" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PyLettuceRunConfigurationType" factoryName="Lettuce">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="modelmanager" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/bin/python2.7" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="modelmanager" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="localhost" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="modelmanager" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <module name="modelmanager" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Attests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="modelmanager" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="modelmanager" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="modelmanager" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="modelmanager" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="py.test">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="modelmanager" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="testToRun" value="" />
+      <option name="keywords" value="" />
+      <option name="params" value="" />
+      <option name="USE_PARAM" value="false" />
+      <option name="USE_KEYWORD" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="modelmanager" type="Python.DjangoServer" factoryName="Django server">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/bin/python2.7" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="modelmanager" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="localhost" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Django server.modelmanager" />
+    </list>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0dcec8c3-f938-4537-9998-c17248641bae" name="Default" comment="" />
+      <created>1462344563649</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1462344563649</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="443" y="100" width="1441" height="966" extended-state="0" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27566403" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.52199763" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modelmanager/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="73">
+          <caret line="84" column="10" selection-start-line="84" selection-start-column="10" selection-end-line="84" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

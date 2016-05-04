@@ -1,0 +1,221 @@
+{% extends "report/report_generic.html" %}
+
+{% load staticfiles %}
+{% load macros %}
+{% loadmacros "report/macros.html" %}
+{% load SBML_filters %}
+
+<!-- TODO: toggle the view, i.e. hide/show the different tables. -->
+{% block content %}
+    <!--------------------------------------------------->
+    <!-- Model -->
+    <!--------------------------------------------------->
+    <a class="anchor" id="Model"></a>
+        {% with doc as item %}
+        {% if item.isSetNotes %}
+            {% usemacro notes %}
+            <hr />
+        {% endif %}
+        {% endwith %}
+
+        {% with model as item %}
+        {% if item.isSetNotes %}
+            {% usemacro notes %}
+            <hr />
+        {% endif %}
+        {% endwith %}
+
+    <h1>Model : {{ model.id }}</h1>
+    {{ model.getModelHistory | SBML_modelHistoryToString | safe }}
+    <table id="table_model_annotation" class="table table-condensed table-nonfluid">
+        <tr>
+
+        <td>
+        {% with doc as item %}{% usemacro annotation %}{% endwith %}
+        <br />
+        {% with model as item %}{% usemacro annotation %}{% endwith %}
+        </td>
+        <td>
+            <table id="table_model" class="table table-condensed table-nonfluid">
+            <tbody>
+            <tr>{% usemacro model %}</tr>
+            </tbody>
+            </table>
+        </td>
+        </tr>
+    </table>
+
+
+
+
+    <!--------------------------------------------------->
+    <!-- FunctionDefinitions -->
+    <!--------------------------------------------------->
+    {% if functions %}
+        <a class="anchor" id="FunctionDefinitions"></a>
+        <table id="table_functions" class="table table-condensed table-nonfluid">
+            <thead>
+            <tr>{% usemacro function_header %}</tr>
+            </thead>
+            <tbody>
+            {% for item in functions %}
+                <tr>{% usemacro function_content %}</tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <hr/>
+    {% endif %}
+    <!--------------------------------------------------->
+    <!-- UnitDefinitions -->
+    <!--------------------------------------------------->
+    {% if units %}
+        <a class="anchor" id="UnitDefinitions"></a>
+        <table id="table_units" class="table table-condensed table-nonfluid">
+            <thead>
+            <tr>{% usemacro unit_header %}</tr>
+            </thead>
+            <tbody>
+            {% for item in units %}
+                <tr>{% usemacro unit_content %}</tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <hr/>
+    {% endif %}
+    <!--------------------------------------------------->
+    <!-- Compartments -->
+    <!--------------------------------------------------->
+    {% if compartments %}
+        <a class="anchor" id="Compartments"></a>
+        <table id="table_compartments" class="table table-condensed table-nonfluid">
+            <thead>
+            <tr>{% usemacro compartment_header %}</tr>
+            </thead>
+            <tbody>
+            {% for item in compartments %}
+                <tr>{% usemacro compartment_content %}</tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <hr/>
+    {% endif %}
+    <!--------------------------------------------------->
+    <!-- Species -->
+    <!--------------------------------------------------->
+    {% if species %}
+        <a class="anchor" id="Species"></a>
+        <table id="table_species" class="table table-condensed table-nonfluid">
+            <thead>
+            <tr>{% usemacro species_header %}</tr>
+            </thead>
+            <tbody>
+            {% for item in species %}
+                <tr>{% usemacro species_content %}</tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <hr/>
+    {% endif %}
+    <!--------------------------------------------------->
+    <!-- Parameters -->
+    <!--------------------------------------------------->
+    {% if parameters %}
+        <a class="anchor" id="Parameters"></a>
+        <table id="table_parameters" class="table table-condensed table-nonfluid">
+            <thead>
+            <tr>{% usemacro parameter_header %}</tr>
+            </thead>
+            <tbody>
+            {% for item in parameters %}
+                <tr>{% usemacro parameter_content %}</tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <hr/>
+    {% endif %}
+    <!--------------------------------------------------->
+    <!-- InitialAssignments -->
+    <!--------------------------------------------------->
+    {% if assignments %}
+        <a class="anchor" id="InitialAssignments"></a>
+        <table id="table_assignments" class="table table-condensed table-nonfluid">
+            <thead>
+            <tr>{% usemacro assignment_header %}</tr>
+            </thead>
+            <tbody>
+            {% for item in assignments %}
+                <tr>{% usemacro assignment_content %}</tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <hr/>
+    {% endif %}
+    <!--------------------------------------------------->
+    <!-- Rules -->
+    <!--------------------------------------------------->
+    {% if rules %}
+        <a class="anchor" id="Rules"></a>
+        <table id="table_rules" class="table table-condensed table-nonfluid">
+            <thead>
+            <tr>{% usemacro rule_header %}</tr>
+            </thead>
+            <tbody>
+            {% for item in rules %}
+                <tr>{% usemacro rule_content %}</tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <hr/>
+    {% endif %}
+    <!--------------------------------------------------->
+    <!-- Constraints -->
+    <!--------------------------------------------------->
+    {% if constraints %}
+        <a class="anchor" id="Constraints"></a>
+        <table id="table_constraints" class="table table-condensed table-nonfluid">
+            <thead>
+            <tr>{% usemacro constraint_header %}</tr>
+            </thead>
+            <tbody>
+            {% for item in constraints %}
+                <tr>{% usemacro constraint_content %}</tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <hr/>
+    {% endif %}
+    <!--------------------------------------------------->
+    <!-- Reactions -->
+    <!--------------------------------------------------->
+    {% if reactions %}
+        <a class="anchor" id="Reactions"></a>
+        <table id="table_reactions" class="table table-condensed table-nonfluid">
+            <thead>
+            <tr>{% usemacro reaction_header %}</tr>
+            </thead>
+            <tbody>
+            {% for item in reactions %}
+                <tr>{% usemacro reaction_content %}</tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <hr/>
+    {% endif %}
+    <!--------------------------------------------------->
+    <!-- Events -->
+    <!--------------------------------------------------->
+    {% if events %}
+        <a class="anchor" id="Events"></a>
+        <table id="table_events" class="table table-condensed table-nonfluid">
+            <thead>
+            <tr>{% usemacro event_header %}</tr>
+            </thead>
+            <tbody>
+            {% for item in events %}
+                <tr>{% usemacro event_content %}</tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+
+{% endblock %}

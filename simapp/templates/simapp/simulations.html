@@ -1,0 +1,26 @@
+{% extends "simapp/base_generic.html" %}
+{% load macros %}
+{% loadmacros "simapp/macros.html" %}
+
+<!------------------------------------------------------->
+<!--  SIMULATIONS									   -->
+<!------------------------------------------------------->
+{% block content %}
+    <h3>Simulations</h3>
+    <table id="table_items" class="table table-condensed table-responsive">
+        <thead>
+            {% usemacro simulation_header %}
+        </thead>
+        <tbody>
+            {% for sim in simulation_list %}
+                {% usemacro simulation_content %}
+            {% endfor %}
+        </tbody>
+    </table>
+
+    {% if simulation_list %}
+        {% with items=simulation_list %}
+            {% usemacro pagination %}
+        {% endwith %}
+    {% endif %}
+{% endblock %}
