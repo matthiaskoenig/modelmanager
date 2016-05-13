@@ -15,3 +15,4 @@ python manage.py test
 # TODO
 * TODO: allow an force overwrite in the database
 * TODO: proper checks of models via model hash
+* TODO: task manager via selery
