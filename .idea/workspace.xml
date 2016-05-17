@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0dcec8c3-f938-4537-9998-c17248641bae" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simapp/db/tools.py" afterPath="$PROJECT_DIR$/simapp/db/tools.py" />
-    </list>
+    <list default="true" id="0dcec8c3-f938-4537-9998-c17248641bae" name="Default" comment="" />
     <ignored path="modelmanager.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -180,8 +177,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1959" />
-    <option name="y" value="30" />
+    <option name="x" value="1960" />
+    <option name="y" value="58" />
     <option name="width" value="1264" />
     <option name="height" value="1152" />
   </component>
@@ -627,7 +624,7 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1959" y="30" width="1264" height="1152" extended-state="1" />
+    <frame x="1960" y="58" width="1264" height="1152" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30509868" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
